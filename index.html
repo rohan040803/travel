@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RK Travels</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            cursor: default;
+        }
+
+        .main {
+            background-image: url(travelpic.png);
+            width: 100%;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .navbar {
+            width: 100%;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: fixed;
+            background-color: white;
+        }
+
+        .logo {
+            margin: 70px;
+            font-size: larger;
+            font-family: cursive;
+            color: black;
+        }
+
+        .nav-links li {
+            list-style: none;
+            display: inline-block;
+            margin: 10px 30px;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: black;
+            font-size: large;
+            font-weight: 700;
+            font-family: cursive;
+            cursor: pointer;
+        }
+        .nav-links .fa-bars{
+            display: none;
+        }
+
+        .register-btn {
+            background-color: red;
+            color: white;
+            text-decoration: none;
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 15px;
+            margin-right: 5%;
+            transition: transform 0.4s ease-in-out;
+        }
+
+        .register-btn:hover {
+            transform: scale(1.2);
+        }
+
+        .container {
+            padding: 0 7%;
+        }
+
+        .container h1 {
+            color: white;
+            font-weight: 500;
+            text-align: center;
+            padding-top: 25%;
+            font-size: 72px;
+        }
+
+        .search-bar {
+            background-color: white;
+            width: 50%;
+            margin: 30px auto;
+            padding: 6px 10px 6px 30px;
+            border-radius: 50px;
+        }
+
+        .search-bar input {
+            border: none;
+            font-size: 20px;
+            padding: 10px 0;
+            width: 92%;
+            cursor: text;
+            outline: none;
+        }
+
+        .search-btn {
+            background-color: red;
+            color: white;
+            border-radius: 50px;
+            border: none;
+        }
+
+        .search-btn i {
+            padding: 20px;
+            cursor: pointer;
+        }
+
+        .main2 {
+            margin-left: 5%;
+            margin-right: 5%;
+        }
+
+        .titlex {
+            margin: 50px 0 20px;
+            font-size: 40px;
+            font-weight: 500;
+            color: black;
+        }
+
+        .containerx {
+            width: 100%;
+            height: 25vh;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .banner {
+            background-image: url(bannerr.jpeg);
+            width: 48%;
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .banner2 {
+            background-image: url(bannerr2.jpeg);
+            width: 48%;
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .ban-tit {
+            color: white;
+            margin: 20px 0 10px 20px;
+            font-size: 30px;
+            font-weight: 600;
+        }
+
+        .ban-cont {
+            color: white;
+            margin: 0 20px;
+        }
+
+        .title1 {
+            margin: 50px 0 20px;
+            font-size: 40px;
+            font-weight: 500;
+            color: black;
+        }
+
+        .exclusives {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-gap: 30px;
+        }
+
+        .exclusives img:hover {
+            transform: scale(0.9);
+        }
+
+        .exclusives img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.4s ease-in-out;
+            cursor: pointer;
+        }
+
+        .title2 {
+            margin: 50px 0 20px;
+            font-size: 40px;
+            font-weight: 500;
+            color: black;
+        }
+
+        .trending-places {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-gap: 30px;
+        }
+
+        .trending-places img:hover {
+            transform: scale(0.9);
+        }
+
+        .trending-places img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.4s ease-in-out;
+            cursor: pointer;
+        }
+
+        .title3 {
+            margin: 50px 0 20px;
+            font-size: 40px;
+            font-weight: 500;
+            color: black;
+        }
+
+        .Explore-ind {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-gap: 30px;
+        }
+
+        .Explore-ind img:hover {
+            transform: scale(0.9);
+        }
+
+        .Explore-ind img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.4s ease-in-out;
+            cursor: pointer;
+        }
+
+        .btn {
+            background-color: #006CE4;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 20px;
+            cursor: pointer;
+        }
+
+        .btn a {
+            text-decoration: none;
+            font-size: 15px;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        .about {
+            text-align: center;
+            margin: 80px 0;
+            color: #333;
+            font-size: 17px;
+        }
+        .about h2 {
+            font-size: 28px;
+            margin-bottom: 30px
+        }
+        .about p{
+            font-weight: lighter;
+            color: black;
+        }
+        footer{
+            margin: 80px 10px;
+            text-align: center;
+        }
+        footer a{
+            text-decoration: none;
+            color: #999;
+            font-size: 22px;
+            margin: 0 10px;
+        }
+        footer i{
+            cursor: pointer;
+        }
+        @media only screen and (max-width:700px){
+            .main{
+                height: 60vh;
+            }
+            .navbar{
+                background-color: black;
+                position: fixed;
+                height: 10%;
+                display: flex;
+                padding: 10px 2px;
+
+            }
+            .logo {
+                display: none;
+        }
+        .nav-links li {
+            margin: 8px 10px;
+            display: flex;
+        }
+        .nav-links li a {
+            display: flex;
+            color: white;
+            font-size: large;
+            text-align: right;
+        }
+        .register-btn{
+            margin: 15px 0 0;
+            display: inline-block;
+        }
+        .container h1{
+            padding-top: 200px;
+            font-size: 7vw;
+        }
+        .search-bar{
+            width: 70%;
+        }
+        .search-bar input{
+            width: 75%;
+        }
+        .search-btn i {
+            padding: 20px;
+        }
+        .containerx{
+            height: 50vh;
+            display: grid;
+            grid-template-rows: minmax(100px);
+            grid-gap: 10px;
+            justify-content: space-between;
+        }
+        .banner{
+            width: 90vw;
+            height: 28vh;
+        }
+        .banner2 {
+            width: 90vw;
+            height: 25vh;
+        }
+    }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="main">
+        <header>
+            <nav id="nvbar" class="navbar">
+                <span class="logo">RK TRAVELS</span>
+                <ul class="nav-links">
+                    <li><a href="#">Popular Places</a></li>
+                    <li><a href="#">Travel Outside</a></li>
+                    <li><a href="#">Online Packages</a></li>
+                </ul>
+                <a href="#" class="register-btn">Register Now</a>
+            </nav>
+        </header>
+        <div class="container">
+            <h1>Find Your Next Stay</h1>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search For Location">
+            <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+    </div>
+    <div class="main2">
+        <h2 class="titlex">Offers</h2>
+        <div class="containerx">
+            <div class="banner">
+                <div class="ban-tit">New year, new adventures</div>
+                <div class="ban-cont">Save 15% or more when you book and stay before 1 April<br>2024</div>
+                <button class="btn"><a href="#">Find Early 2024 Deals</a></button>
+            </div>
+            <div class="banner2">
+                <div class="ban-tit">Seize the moment</div>
+                <div class="ban-cont">Save 15% or more when you book and stay before 1 October<br>2024</div>
+                <button class="btn"><a href="#">Find Gateway Deals</a></button>
+            </div>
+        </div>
+        <h2 class="title2">Trending Places</h2>
+        <div class="trending-places">
+            <div><img src="dubai.png"><span>
+                    <h3>Dubai</h3>
+                </span></div>
+            <div><img src="new-york.png"><span>
+                    <h3>New York</h3>
+                </span></div>
+            <div><img src="paris.png"><span>
+                    <h3>Paris</h3>
+                </span></div>
+            <div><img src="new-delhi.png"><span>
+                    <h3>New Delhi</h3>
+                </span></div>
+        </div>
+
+        <h2 class="title3">Explore India</h2>
+        <div class="Explore-ind">
+            <div><img src="goa.jpg"><span>
+                    <h3>Goa</h3>
+                </span></div>
+            <div><img src="new delhi.jpg"><span>
+                    <h3>New Delhi</h3>
+                </span></div>
+            <div><img src="mumbai.jpg"><span>
+                    <h3>Mumbai</h3>
+                </span></div>
+            <div><img src="ooty.jpg"><span>
+                    <h3>Ooty</h3>
+                </span></div>
+            <div><img src="jaipur.jpg"><span>
+                    <h3>Jaipur</h3>
+                </span></div>
+            <div><img src="varanasi.jpeg"><span>
+                    <h3>Varanasi</h3>
+                </span></div>
+            <div><img src="banglore.jpg"><span>
+                    <h3>Banglore</h3>
+                </span></div>
+            <div><img src="manali.jpeg"><span>
+                    <h3>Manali</h3>
+                </span></div>
+            <div><img src="rishikesh.jpg"><span>
+                    <h3>Rishikesh</h3>
+                </span></div>
+            <div><img src="lonavala.jpg"><span>
+                    <h3>Lonavala</h3>
+                </span></div>
+        </div>
+        <div class="about">
+            <h2>About RK Travels</h2>
+            <p>Countary to Popular belief, Lorem ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years 
+                old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum 
+                passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
+        </div>
+    </div>
+    <footer>
+        <a href="https://facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://linkedin.com/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    </footer>
+</body>
+
+</html>
